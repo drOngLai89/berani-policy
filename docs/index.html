@@ -1,8 +1,344 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Berani</title>
-</head><body>
-<h1>Berani</h1>
-<p><a href="privacy-policy.html">Privacy Policy</a></p>
-</body></html>
+<html lang="ms" data-lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Berani: Hentikan Buli</title>
+<meta name="description" content="Dibuli? Tekan dan ceritakan. Berani menyusun cerita anda dan menyediakan Borang 1 untuk Tribunal bagi Antibuli. Percuma, tiada akaun, rekod kekal di telefon anda.">
+<meta property="og:title" content="Berani: Hentikan Buli">
+<meta property="og:description" content="Tekan dan ceritakan. Berani sediakannya untuk Tribunal. Percuma dan sulit.">
+<meta property="og:image" content="https://dronglai89.github.io/berani-policy/site/share.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0E6B66">
+<link rel="icon" href="site/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F8F6; --surface:#FFFFFF; --line:#E3E8E7;
+  --ink:#0F1E25; --ink2:#4A5A62; --ink3:#6B7A80;
+  --teal:#0E6B66; --teal-ink:#0A4F4B; --teal-soft:#E4F2F0;
+  --tell:#EE4B2B; --tell-deep:#C2361A; --tell-soft:#FFE3DA;
+  --navy:#12324A; --danger:#B3261E;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 "Plus Jakarta Sans",system-ui,sans-serif}
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--tell);outline-offset:3px;border-radius:6px}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding-left:20px;padding-right:20px}
+
+/* language switch */
+html[data-lang="ms"] [lang="en"]:not(html), html[data-lang="en"] [lang="ms"]:not(html){display:none!important}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0}
+.mark{font-weight:800;letter-spacing:.14em;color:var(--navy);font-size:20px;text-decoration:none}
+.top-r{display:flex;gap:10px;align-items:center}
+.langs{display:flex;border:1px solid var(--line);border-radius:999px;background:var(--surface);padding:3px}
+.langs button{font:600 14px/1 inherit;font-family:inherit;border:0;background:none;color:var(--ink2);padding:8px 12px;border-radius:999px;cursor:pointer;min-height:36px}
+.langs button[aria-pressed="true"]{background:var(--teal);color:#fff}
+.sos{display:inline-flex;align-items:center;gap:6px;background:var(--danger);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:0 14px;min-height:40px;border-radius:999px;white-space:nowrap}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:28px 0 72px}
+h1{font-size:clamp(40px,6.4vw,76px);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:0 0 20px;max-width:12ch}
+.lede{font-size:clamp(18px,2vw,21px);color:var(--ink2);max-width:34ch;margin:0 0 28px}
+.stores{display:flex;flex-wrap:wrap;gap:12px}
+.store{display:inline-flex;flex-direction:column;justify-content:center;min-height:56px;padding:8px 20px;border-radius:14px;background:var(--ink);color:#fff;text-decoration:none;line-height:1.15}
+.store small{font-size:12px;opacity:.75}
+.store b{font-size:18px;font-weight:700}
+.store.alt{background:var(--surface);color:var(--ink);border:1.5px solid var(--ink)}
+.free{margin-top:16px;color:var(--ink3);font-size:15px}
+
+.stage{position:relative;display:grid;place-items:center;aspect-ratio:1/1;max-width:500px;justify-self:center;width:100%}
+.ring{position:absolute;border-radius:50%;background:var(--tell);}
+.ring.r3{inset:0;opacity:.08}
+.ring.r2{inset:11%;opacity:.14}
+.ring.r1{inset:22%;opacity:.22}
+.tell{position:relative;width:52%;aspect-ratio:1/1;border-radius:50%;background:var(--tell);color:#fff;border:6px solid #fff;box-shadow:0 18px 40px rgba(194,54,26,.35);display:grid;place-items:center;text-align:center;text-decoration:none;padding:10%}
+.tell svg{width:30%;height:auto;margin:0 auto 6px}
+.tell b{display:block;font-size:clamp(17px,2.2vw,24px);letter-spacing:.06em;font-weight:800}
+.tell span{display:block;font-size:clamp(12px,1.3vw,15px);opacity:.92;font-weight:500}
+@media (prefers-reduced-motion:no-preference){
+  .ring{animation:breathe 3.2s ease-in-out infinite}
+  .ring.r2{animation-delay:.25s}.ring.r1{animation-delay:.5s}
+  @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+}
+
+/* sections */
+section{padding:72px 0}
+h2{font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.025em;margin:0 0 14px;font-weight:800;max-width:20ch}
+.intro{color:var(--ink2);max-width:58ch;margin:0 0 40px;font-size:18px}
+
+/* steps: a real sequence */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s}
+.steps li{counter-increment:s}
+.shot{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:10px;margin-bottom:18px}
+.shot img{border-radius:20px;width:100%;height:auto;aspect-ratio:1290/2796;object-fit:cover}
+.steps h3{font-size:19px;margin:0 0 6px;line-height:1.3;display:flex;gap:10px;align-items:baseline}
+.steps h3::before{content:counter(s);flex:none;display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;font-size:14px;font-weight:800;transform:translateY(-2px)}
+.steps p{margin:0;color:var(--ink2);font-size:16px}
+
+/* who does what */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:28px;overflow:hidden;border:1px solid var(--line)}
+.split > div{padding:36px}
+.split .ours{background:var(--surface)}
+.split .theirs{background:var(--navy);color:#fff}
+.split h3{font-size:22px;margin:0 0 16px}
+.split ul{margin:0;padding:0;list-style:none}
+.split li{padding:12px 0;border-top:1px solid var(--line);font-size:16px}
+.split .theirs li{border-color:rgba(255,255,255,.16)}
+.split .theirs a{color:#fff;font-weight:700}
+.split li:first-child{border-top:0;padding-top:0}
+
+/* privacy */
+.privacy{background:var(--teal-soft)}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:16px 48px;margin:0;padding:0;list-style:none;max-width:900px}
+.facts li{font-size:17px;padding-left:30px;position:relative}
+.facts li::before{content:"";position:absolute;left:0;top:.45em;width:16px;height:9px;border-left:3px solid var(--teal);border-bottom:3px solid var(--teal);transform:rotate(-45deg)}
+
+/* audiences */
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.who h3{font-size:20px;margin:0 0 8px}
+.who p{margin:0;color:var(--ink2);font-size:16px}
+
+/* help */
+.help{background:var(--ink);color:#fff;border-radius:32px;padding:44px;display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start}
+.help h2{color:#fff}
+.help p{color:#C9D3D6;margin:0}
+.lines{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.line{display:block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:16px 18px;color:#fff;text-decoration:none}
+.line b{display:block;font-size:22px;letter-spacing:.01em}
+.line span{font-size:14px;color:#C9D3D6}
+.line.urgent{background:var(--danger);border-color:var(--danger)}
+.line.urgent span{color:#fff}
+
+/* closing cta */
+.cta{text-align:center;padding-top:88px;padding-bottom:88px}
+.cta h2{margin:0 auto 14px}
+.cta .stores{justify-content:center}
+
+footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--ink3);font-size:14px}
+footer .wrap{display:grid;gap:14px}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+footer a{color:var(--ink2)}
+.disclaimer{max-width:70ch}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;padding-bottom:48px}
+  .stage{max-width:340px;order:-1}
+  .steps{grid-template-columns:1fr 1fr;gap:24px 18px}
+  .split{grid-template-columns:1fr}
+  .who{grid-template-columns:1fr;gap:24px}
+  .help{grid-template-columns:1fr;padding:28px 22px}
+  .facts{grid-template-columns:1fr}
+  section{padding:56px 0}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .wrap{padding-left:16px;padding-right:16px}
+  .sos .t{display:none}
+  .lines{grid-template-columns:1fr}
+  .split > div{padding:26px 22px}
+  .steps h3{font-size:17px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="#">BERANI</a>
+    <div class="top-r">
+      <div class="langs" role="group" aria-label="Bahasa / Language">
+        <button type="button" data-set="ms" aria-pressed="true">BM</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="sos" href="#bantuan"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span lang="ms">999 <span class="t">· Bantuan</span></span><span lang="en">999 <span class="t">· Help now</span></span></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1><span lang="ms">Dibuli bukan salah anda.</span><span lang="en">Being bullied is not your fault.</span></h1>
+        <p class="lede">
+          <span lang="ms">Tekan dan ceritakan apa yang berlaku. Berani menyusunnya, menunjukkan apa yang Tribunal perlukan, dan menyediakan Borang 1 untuk portal rasmi.</span>
+          <span lang="en">Press and say what happened. Berani sorts it out, shows what the Tribunal needs, and prepares Borang 1 for the official portal.</span>
+        </p>
+        <div class="stores" id="muat-turun">
+          <a class="store" href="https://apps.apple.com/my/app/berani/id6751450724" rel="noopener"><small lang="ms">Muat turun di</small><small lang="en">Download on the</small><b>App Store</b></a>
+          <a class="store alt" href="https://play.google.com/store/apps/details?id=com.drsherman.berani" rel="noopener"><small lang="ms">Dapatkan di</small><small lang="en">Get it on</small><b>Google Play</b></a>
+        </div>
+        <p class="free"><span lang="ms">Percuma. Tiada akaun. Tiada iklan. Bahasa Melayu dan English.</span><span lang="en">Free. No account. No ads. Bahasa Melayu and English.</span></p>
+      </div>
+      <div class="stage" aria-hidden="true">
+        <span class="ring r3"></span><span class="ring r2"></span><span class="ring r1"></span>
+        <a class="tell" href="#muat-turun" tabindex="-1">
+          <span>
+            <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 15a3.5 3.5 0 0 0 3.5-3.5v-6a3.5 3.5 0 1 0-7 0v6A3.5 3.5 0 0 0 12 15zm6-3.5a1 1 0 1 0-2 0 4 4 0 0 1-8 0 1 1 0 1 0-2 0 6 6 0 0 0 5 5.9V20H9a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2h-2v-2.6a6 6 0 0 0 5-5.9z"/></svg>
+            <b lang="ms">TEKAN</b><b lang="en">TAP TO TELL</b>
+            <span lang="ms">Berani buat selebihnya</span><span lang="en">Berani does the rest</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+
+<section id="cara">
+  <div class="wrap">
+    <h2><span lang="ms">Dari apa yang berlaku, ke Tribunal.</span><span lang="en">From what happened, to the Tribunal.</span></h2>
+    <p class="intro">
+      <span lang="ms">Akta Antibuli 2026 memberi pelajar bawah 18 tahun satu saluran rasmi: Tribunal bagi Antibuli. Berani membantu anda sampai ke sana dengan cerita yang lengkap.</span>
+      <span lang="en">The Anti-Bullying Act 2026 gives students under 18 an official channel: the Tribunal for Anti-bully. Berani helps you get there with a complete account.</span>
+    </p>
+    <ol class="steps">
+      <li>
+        <div class="shot"><img src="site/2-listening.webp" width="520" height="1127" loading="lazy" alt=""></div>
+        <h3><span lang="ms">Bercakap sahaja</span><span lang="en">Just speak</span></h3>
+        <p><span lang="ms">Ceritakan dalam Bahasa Melayu atau English, atau taip. Rakaman dipadam sebaik ia menjadi teks.</span><span lang="en">Tell it in Bahasa Melayu or English, or type. The recording is deleted once it becomes text.</span></p>
+      </li>
+      <li>
+        <div class="shot"><img src="site/3-review.webp" width="520" height="1127" loading="lazy" alt=""></div>
+        <h3><span lang="ms">Berani menyusunnya</span><span lang="en">Berani sorts it</span></h3>
+        <p><span lang="ms">Bila, di mana, apa, siapa dan saksi. Berani hanya bertanya apa yang tertinggal. Tambah tangkapan skrin sebagai bukti.</span><span lang="en">When, where, what, who and who saw it. Berani only asks for what is missing. Add screenshots as proof.</span></p>
+      </li>
+      <li>
+        <div class="shot"><img src="site/4-done.webp" width="520" height="1127" loading="lazy" alt=""></div>
+        <h3><span lang="ms">Beritahu sekolah dahulu</span><span lang="en">Tell the school first</span></h3>
+        <p><span lang="ms">Jika ia berlaku di sekolah, Berani menulis mesej anda kepada jawatankuasa antibuli sekolah.</span><span lang="en">If it happened at school, Berani writes your message to the school's anti-bully committee.</span></p>
+      </li>
+      <li>
+        <div class="shot"><img src="site/5-borang.webp" width="520" height="1127" loading="lazy" alt=""></div>
+        <h3><span lang="ms">Borang 1, sedia difailkan</span><span lang="en">Borang 1, ready to file</span></h3>
+        <p><span lang="ms">Berani mengisi Borang 1 untuk anda salin ke e-TAB di tab.bheuu.gov.my, atau simpan sebagai PDF.</span><span lang="en">Berani fills in Borang 1 for you to copy into e-TAB at tab.bheuu.gov.my, or save as a PDF.</span></p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="tribunal">
+  <div class="wrap">
+    <h2><span lang="ms">Berani menyediakan. Tribunal yang memutuskan.</span><span lang="en">Berani prepares. The Tribunal decides.</span></h2>
+    <p class="intro">
+      <span lang="ms">Berani tidak menggantikan saluran rasmi. Ia membawa anda kepadanya.</span>
+      <span lang="en">Berani does not replace the official channels. It brings you to them.</span>
+    </p>
+    <div class="split">
+      <div class="ours">
+        <h3><span lang="ms">Berani membantu anda</span><span lang="en">Berani helps you</span></h3>
+        <ul>
+          <li><span lang="ms">Merekod apa yang berlaku, dengan tarikh dan bukti</span><span lang="en">Record what happened, with dates and proof</span></li>
+          <li><span lang="ms">Melihat corak jika ia berulang</span><span lang="en">See the pattern if it keeps happening</span></li>
+          <li><span lang="ms">Menulis mesej kepada sekolah</span><span lang="en">Write the message to the school</span></li>
+          <li><span lang="ms">Mengisi Borang 1 dalam BM atau English</span><span lang="en">Fill in Borang 1 in BM or English</span></li>
+        </ul>
+      </div>
+      <div class="theirs">
+        <h3><span lang="ms">Saluran rasmi</span><span lang="en">Official channels</span></h3>
+        <ul>
+          <li><span lang="ms">Aduan difailkan di <a href="https://tab.bheuu.gov.my/" rel="noopener">tab.bheuu.gov.my</a></span><span lang="en">Complaints are filed at <a href="https://tab.bheuu.gov.my/" rel="noopener">tab.bheuu.gov.my</a></span></li>
+          <li><span lang="ms">Soalan tentang Tribunal kepada BAYU, pembantu Tribunal sendiri</span><span lang="en">Questions about the Tribunal go to BAYU, the Tribunal's own assistant</span></li>
+          <li><span lang="ms">Soalan tentang kes anda melalui <a href="https://tab.bheuu.gov.my/tanya-kami" rel="noopener">Tanya Kami</a></span><span lang="en">Questions about your case through <a href="https://tab.bheuu.gov.my/tanya-kami" rel="noopener">Tanya Kami</a></span></li>
+          <li><span lang="ms">Berani tidak memberi nasihat undang undang</span><span lang="en">Berani does not give legal advice</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="privacy" id="privasi">
+  <div class="wrap">
+    <h2><span lang="ms">Sulit sejak awal.</span><span lang="en">Private by design.</span></h2>
+    <p class="intro">
+      <span lang="ms">Apa yang anda ceritakan adalah milik anda.</span>
+      <span lang="en">What you tell Berani belongs to you.</span>
+    </p>
+    <ul class="facts">
+      <li><span lang="ms">Tiada akaun, tiada iklan, tiada penjejakan</span><span lang="en">No account, no ads, no tracking</span></li>
+      <li><span lang="ms">Rekod anda kekal di telefon anda</span><span lang="en">Your records stay on your phone</span></li>
+      <li><span lang="ms">Suara, teks dan tangkapan skrin dihantar hanya apabila anda memilih, dan pelayan kami tidak menyimpannya</span><span lang="en">Voice, text and screenshots are sent only when you choose, and our server does not keep them</span></li>
+      <li><span lang="ms">Nombor IC dan alamat rumah anda tidak pernah disimpan</span><span lang="en">Your IC number and home address are never saved</span></li>
+      <li><span lang="ms">AI hanya digunakan untuk menukar suara kepada teks, menyusun rekod dan mendraf Borang 1. Tiada sembang AI.</span><span lang="en">AI is used only to turn voice into text, sort the record and draft Borang 1. There is no AI chat.</span></li>
+      <li><span lang="ms">Anda menyemak dan boleh mengubah segalanya</span><span lang="en">You check and can change everything</span></li>
+    </ul>
+    <p style="margin:32px 0 0"><a href="privacy-policy.html"><span lang="ms">Baca dasar privasi penuh</span><span lang="en">Read the full privacy policy</span></a></p>
+  </div>
+</section>
+
+<section id="untuk-siapa">
+  <div class="wrap">
+    <h2><span lang="ms">Untuk siapa Berani?</span><span lang="en">Who is Berani for?</span></h2>
+    <div class="who" style="margin-top:32px">
+      <div>
+        <h3><span lang="ms">Pelajar</span><span lang="en">Students</span></h3>
+        <p><span lang="ms">Fizikal, kata kata, dikecualikan atau dalam talian. Jika ia menyakitkan dan berulang, ceritakan.</span><span lang="en">Physical, verbal, being left out or online. If it hurts and keeps happening, tell it.</span></p>
+      </div>
+      <div>
+        <h3><span lang="ms">Ibu bapa dan penjaga</span><span lang="en">Parents and guardians</span></h3>
+        <p><span lang="ms">Bantu anak anda merekod dengan tenang, dan failkan Borang 1 bagi pihak mereka.</span><span lang="en">Help your child record it calmly, and file Borang 1 on their behalf.</span></p>
+      </div>
+      <div>
+        <h3><span lang="ms">Guru dan kaunselor</span><span lang="en">Teachers and counsellors</span></h3>
+        <p><span lang="ms">Terima laporan yang tersusun: tarikh, tempat, saksi dan bukti, dalam satu mesej.</span><span lang="en">Receive a structured report: dates, places, witnesses and proof, in one message.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" id="bantuan">
+  <div class="help">
+    <div>
+      <h2><span lang="ms">Dalam bahaya sekarang?</span><span lang="en">In danger right now?</span></h2>
+      <p><span lang="ms">Pergi ke tempat selamat dan beritahu orang dewasa yang anda percayai. Talian ini sentiasa dibuka.</span><span lang="en">Get to a safe place and tell an adult you trust. These lines are always open.</span></p>
+    </div>
+    <div class="lines">
+      <a class="line urgent" href="tel:999"><b>999</b><span lang="ms">Polis dan ambulans</span><span lang="en">Police and ambulance</span></a>
+      <a class="line" href="tel:15999"><b>15999</b><span>Talian Kasih, 24/7</span></a>
+      <a class="line" href="https://wa.me/60192615999" rel="noopener"><b>019 261 5999</b><span lang="ms">WhatsApp Talian Kasih</span><span lang="en">Talian Kasih on WhatsApp</span></a>
+      <a class="line" href="tel:+60376272929"><b>03 7627 2929</b><span lang="ms">Befrienders, sokongan emosi 24/7</span><span lang="en">Befrienders, emotional support 24/7</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap cta">
+  <h2><span lang="ms">Anda tidak perlu menghadapinya seorang diri.</span><span lang="en">You don't have to face it alone.</span></h2>
+  <p class="intro" style="margin:0 auto 28px"><span lang="ms">Muat turun Berani secara percuma.</span><span lang="en">Download Berani for free.</span></p>
+  <div class="stores">
+    <a class="store" href="https://apps.apple.com/my/app/berani/id6751450724" rel="noopener"><small lang="ms">Muat turun di</small><small lang="en">Download on the</small><b>App Store</b></a>
+    <a class="store alt" href="https://play.google.com/store/apps/details?id=com.drsherman.berani" rel="noopener"><small lang="ms">Dapatkan di</small><small lang="en">Get it on</small><b>Google Play</b></a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="privacy-policy.html"><span lang="ms">Dasar privasi</span><span lang="en">Privacy policy</span></a>
+      <a href="support.html"><span lang="ms">Sokongan dan hubungi</span><span lang="en">Support and contact</span></a>
+      <a href="child-safety-standards.html"><span lang="ms">Standard keselamatan kanak kanak</span><span lang="en">Child safety standards</span></a>
+      <a href="mailto:berani@ironlakegovernance.com">berani@ironlakegovernance.com</a>
+      <a id="ig" href="#" hidden>Instagram</a>
+    </nav>
+    <p class="disclaimer"><span lang="ms">Berani ialah aplikasi bebas. Ia tidak dikendalikan oleh kerajaan, Tribunal bagi Antibuli, sekolah atau polis, dan bukan nasihat undang undang.</span><span lang="en">Berani is an independent app. It is not run by the government, the Tribunal for Anti-bully, a school or the police, and it is not legal advice.</span></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btns=document.querySelectorAll('.langs button');
+  function set(l){
+    root.setAttribute('data-lang',l); root.setAttribute('lang',l==='ms'?'ms':'en');
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.set===l))});
+    try{localStorage.setItem('berani-lang',l)}catch(e){}
+  }
+  var saved=null; try{saved=localStorage.getItem('berani-lang')}catch(e){}
+  var q=new URLSearchParams(location.search).get('lang');
+  set(q==='en'||q==='ms'?q:(saved||'ms'));
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+})();
+</script>
+</body>
+</html>
