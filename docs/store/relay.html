@@ -1,0 +1,15 @@
+<!doctype html><meta charset="utf-8"><title>relay</title>
+<script>
+// Store upload helper: the parent page asks for image paths under /store/, this page fetches them
+// (same origin) and posts the bytes back. Only files under this site's /store/ folder are served.
+addEventListener('message', async (e) => {
+  const paths = (e.data && e.data.paths) || [];
+  const out = [];
+  for (const p of paths) {
+    if (!/^[a-z0-9-]+\/[a-z0-9-]+\.png$/.test(p)) continue;
+    const r = await fetch('./' + p + '?' + Date.now());
+    out.push({ path: p, buf: await r.arrayBuffer() });
+  }
+  e.source.postMessage({ relay: out }, e.origin, out.map((o) => o.buf));
+});
+</script>
